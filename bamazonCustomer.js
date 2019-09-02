@@ -66,10 +66,13 @@ function start() {
                 ],
                 function(error) {
                     if (error) throw err;
-                    console.log("Sorry, we have insufficient inventory at the moment");
+                    console.log("You're order has been successfully placed");
                     start();
                 }
             )
+        } else {
+            console.log("Sorry, we have insufficent inventory at the moment. Please check again later");
+            start();
         }
     })
 })};
