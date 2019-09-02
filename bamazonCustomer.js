@@ -12,11 +12,11 @@ var connection = mysql.createConnection({
 connection.connect(function(err){
     if(err) throw err;
     console.log("connected as id " + connection.threadId);
-    queryAllItems();
+    viewProducts();
     start();
 });
 
-function queryAllItems() {
+function viewProducts() {
     connection.query("SELECT * FROM products", function(err, res) {
         if(err) throw err;
         for (var i = 0; i < res.length; i++) {
@@ -54,11 +54,11 @@ function start() {
                 chosenItem = res[i];
             }
         }
-        if (chosenItem.stock_quantity < res[i].answer.howMuchToBuy) {
+        if (chosenItem.stock_quantity > answer.howMuchToBuy) {
             connection.query("UPDATE products SET ? WHERE ?",
                 [
                     {
-                        stock_quantity: stock_quantity - answer.howMuchToBuy
+                        stock_quantity: res[i].stock_quantity - answer.howMuchToBuy
                     },
                     {
                         item_id: chosenItem
@@ -70,6 +70,7 @@ function start() {
                     start();
                 }
             )
+            console.log(res[i].price)
         } else {
             console.log("Sorry, we have insufficent inventory at the moment. Please check again later");
             start();
