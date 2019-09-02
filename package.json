@@ -1,0 +1,23 @@
+{
+  "name": "enfuego.com",
+  "version": "1.0.0",
+  "description": "An Amazon-like storefront that will take in orders from customers and deplete stock from the store's inventory.",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linh0404/enFuego.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linh0404/enFuego.com/issues"
+  },
+  "homepage": "https://github.com/linh0404/enFuego.com#readme",
+  "dependencies": {
+    "inquirer": "^7.0.0",
+    "mysql": "^2.17.1"
+  }
+}
