@@ -58,10 +58,10 @@ function start() {
             connection.query("UPDATE products SET ? WHERE ?",
                 [
                     {
-                        stock_quantity: res[i].stock_quantity - answer.howMuchToBuy
+                        stock_quantity: chosenItem.stock_quantity - answer.howMuchToBuy
                     },
                     {
-                        item_id: chosenItem
+                        item_id: chosenItem.item_id
                     }
                 ],
                 function(error) {
@@ -70,7 +70,7 @@ function start() {
                     start();
                 }
             )
-            console.log(res[i].price)
+            console.log("You're total is: $" + chosenItem.price * answer.howMuchToBuy)
         } else {
             console.log("Sorry, we have insufficent inventory at the moment. Please check again later");
             start();

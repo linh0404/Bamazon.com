@@ -53,7 +53,7 @@ function viewProducts() {
 };
 
 function viewLowInventory() {
-    connection.query("SELECT * FROM products WHERE stock_quantity < 45", function(err, res) {
+    connection.query("SELECT * FROM products WHERE stock_quantity < 5", function(err, res) {
         if (err) throw err; 
         for (var i = 0; i < res.length; i++) {
             console.log(res[i].item_id + " | " + res[i].product_name + " | " + res[i].department_name + " | " + res[i].price + " | " + res[i].stock_quantity)
@@ -85,13 +85,19 @@ connection.query("SELECT * FROM products", function(err, res) {
         },
     ])
     .then(function(answer) {
+        var chosenItem;
+        for (var i = 0; i < res.length; i++) {
+            if (res[i].product_name === answer.addInventory) {
+                chosenItem = res[i];
+            }
+        }
         connection.query("UPDATE products SET ? WHERE ?", 
         [
             {
-                stock_quantity: stock_quantity + answer.howMuchToAdd
+                stock_quantity: parseInt(chosenItem.stock_quantity) + parseInt(answer.howMuchToAdd)
             },
             {
-                item_id: answer.addInventory
+                item_id: chosenItem.item_id
             }
         ],
         function(err, res) {
