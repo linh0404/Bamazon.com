@@ -15,6 +15,7 @@ connection.connect(function(err){
 });
 
 function start() {
+    // console.clear();
         inquirer.prompt([
             {
                 name: "choice",
@@ -29,7 +30,7 @@ function start() {
         ])
     .then(function(answer) {
         if (answer.choice === "View Products for Sale") {
-            viewProducts();
+             viewProducts();           
         } else if (answer.choice === "View Low Inventory") {
             viewLowInventory();
         } else if (answer.choice === "Add to Inventory") {
@@ -39,6 +40,7 @@ function start() {
         } else {
             connection.end();
         }
+        // console.clear();
     })};
 
 
@@ -47,9 +49,10 @@ function viewProducts() {
         if(err) throw err;
         for (var i = 0; i < res.length; i++) {
             console.log(res[i].item_id + " | " + res[i].product_name + " | " + res[i].department_name + " | " + res[i].price + " | " + res[i].stock_quantity)
-        }
+        };
+        console.log("-----------------------------------");
+        start();
     })
-    start();
 };
 
 function viewLowInventory() {
@@ -57,9 +60,10 @@ function viewLowInventory() {
         if (err) throw err; 
         for (var i = 0; i < res.length; i++) {
             console.log(res[i].item_id + " | " + res[i].product_name + " | " + res[i].department_name + " | " + res[i].price + " | " + res[i].stock_quantity)
-        }
+        };
+        console.log("-----------------------------------");
+        start();
     })
-    start();
 };
 
 function addToInventory() {
@@ -103,6 +107,7 @@ connection.query("SELECT * FROM products", function(err, res) {
         function(err, res) {
             if (err) throw err;
             console.log("Inventory added");
+            console.log("----------------------------------");
             start();
         })
     })
@@ -143,6 +148,7 @@ function addNewProduct() {
         function(err) {
             if (err) throw err;
             console.log("Your items were added into stock");
+            console.log("----------------------------------");
             start();
         })
     })
