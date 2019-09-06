@@ -27,7 +27,29 @@ node bamazonManager.js
 
 # How it works
 
-Using it is super simple. Once you enter the initial prompts as a customer, you get given a choice of items to buy:
+Using it is super simple. Once you enter the initial prompts as a customer, you get given a choice of items to buy and scroll through:
 
-![GitHub Logo](/images/1.png)
-Format: ![Alt Text](url)
+![Image One](/images/1.png)
+
+Once you have chosen an item, it will prompt how many and then provide the total payable. 
+
+![Image Two](/images/2.png)
+
+Using it as a manager gives you a wider array of choices - as displayed below: 
+
+![Image Three](/images/3.png)
+
+You can view products for sale...
+
+![Image Four](/images/4.png)
+
+You can view low inventory...
+
+![Image Five](/images/5.png)
+
+You can also add existing inventory or add new products!
+
+![Image Six](/images/6.png)
+
+
+
