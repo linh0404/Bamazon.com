@@ -12,6 +12,13 @@ Make sure you install all the dependancies you need for the project.
 
 Once you have node.js installed, navigate to the directory and enter the following commands into terminal
 
-``` npm install
-node bamazonCustomer.js or node bamazonManager.js 
+``` 
+npm install
+node bamazonCustomer.js 
+```
+or
+
+```
+npm install
+node bamazonManager.js 
 ```
