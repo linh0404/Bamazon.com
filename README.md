@@ -12,13 +12,22 @@ Make sure you install all the dependancies you need for the project.
 
 Once you have node.js installed, navigate to the directory and enter the following commands into terminal
 
+Logging in as a customer
 ``` 
 npm install
 node bamazonCustomer.js 
 ```
 or
 
+Logging in as a manager
 ```
 npm install
 node bamazonManager.js 
 ```
+
+# How it works
+
+Using it is super simple. Once you enter the initial prompts as a customer, you get given a choice of items to buy:
+
+![GitHub Logo](/images/1.png)
+Format: ![Alt Text](url)
