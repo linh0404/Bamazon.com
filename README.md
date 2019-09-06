@@ -8,12 +8,14 @@ Within the manager portal, you can view all inventory in the store, view low inv
 Happy shopping!
 
 # Getting Started
-Make sure you install all the dependancies you need for the project. 
+Make sure you install all the dependancies you need for the project including node.js and mySQL 
 
-Once you have node.js installed, navigate to the directory and enter the following commands into terminal
+Once you have these installed, navigate to the directory and enter the following commands into terminal
 
 Logging in as a customer
 ``` 
+git clone git@github.com:linh0404/Bamazon.com.git
+cd bamazon
 npm install
 node bamazonCustomer.js 
 ```
@@ -21,6 +23,8 @@ or
 
 Logging in as a manager
 ```
+git clone git@github.com:linh0404/Bamazon.com.git
+cd bamazon
 npm install
 node bamazonManager.js 
 ```
@@ -51,5 +55,13 @@ You can also add existing inventory or add new products!
 
 ![Image Six](/images/6.png)
 
+# Technologies Used
+
+- Javascript
+- Node.js
+- mySQL
+- NPM Packages
+..* mySQL
+..* inquirer
 
 
