@@ -61,7 +61,7 @@ You can also add existing inventory or add new products!
 - Node.js
 - mySQL
 - NPM Packages
-..* mySQL
-..* inquirer
+  ..* mySQL
+  ..* inquirer
 
 
