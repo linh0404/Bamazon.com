@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
 connection.connect(function(err){
     if(err) throw err;
     console.log("connected as id " + connection.threadId);
-    viewProducts();
+    // viewProducts();
     start();
 });
 
@@ -21,7 +21,6 @@ function viewProducts() {
         if(err) throw err;
         for (var i = 0; i < res.length; i++) {
             console.log(res[i].item_id + " | " + res[i].product_name + " | " + res[i].department_name + " | " + res[i].price)
-            console.log("----------------------------------");
         }
     })
 };
@@ -73,7 +72,6 @@ function start() {
                 }
             )
             console.log("You're total is: $" + chosenItem.price * answer.howMuchToBuy)
-            console.log("----------------------------------");
         } else {
             console.log("Sorry, we have insufficent inventory at the moment. Please check again later");
             console.log("----------------------------------");
