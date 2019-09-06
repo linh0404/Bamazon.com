@@ -29,3 +29,5 @@ node bamazonManager.js
 
 Using it is super simple. Once you enter the initial prompts as a customer, you get given a choice of items to buy:
 
+![GitHub Logo](/images/1.png)
+Format: ![Alt Text](url)
